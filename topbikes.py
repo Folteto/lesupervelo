@@ -2,7 +2,6 @@ import requests
 import math
 import folium
 import webbrowser
-import shutil
 import os
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut
@@ -95,6 +94,9 @@ def find_closest_bikes(user_coords, bikes_data):
     valid_bikes.sort(key=lambda x: (x["distance"], -x["current_range_meter"]))
     return valid_bikes[:5]
 
+def is_termux() -> bool:
+    # Vérifie si termux-open est dispo dans le PATH
+    return os.system("which termux-open >/dev/null 2>&1") == 0
 
 def open_html(html_path: str):
     """
@@ -103,7 +105,7 @@ def open_html(html_path: str):
     - Sinon      : webbrowser.open (fonctionne sur Windows, macOS, Linux).
     """
     # si termux-open est installé, on est probablement sous Termux
-    if shutil.which("termux-open"):
+    if is_termux():
         cmd = f"termux-open '{html_path}'"
         os.system(cmd)
     else:

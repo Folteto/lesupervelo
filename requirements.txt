@@ -1,5 +1,4 @@
 requests
 folium
 geopy
-shutil
 os
