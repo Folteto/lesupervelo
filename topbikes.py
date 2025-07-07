@@ -108,12 +108,12 @@ def main():
 
     closest_bikes = find_closest_bikes(user_coords, bike_data["data"]["bikes"])
     if closest_bikes:
-        print("The 5 closest bikes to you are:")
+        print("Les 5 vélos les plus proches sont :")
         for bike in closest_bikes:
             station_name = get_station_name(bike.get("station_id"), station_data)
             print(
-                f"Bike ID: {bike['bike_id']}, Distance: {bike['distance']:.2f} meters, "
-                f"Range: {bike['current_range_meter']} meters, Station: {station_name}"
+                f"ID vélo : {bike['bike_id']}, Distance: {bike['distance']:.2f} mètres, "
+                f"Batterie : {round((bike['current_range_meter']/45000)*100)} %, Station: {station_name}"
             )
 
         # Create a map centered at the user's location
@@ -132,9 +132,9 @@ def main():
             folium.Marker(
                 location=(bike["latitude"], bike["longitude"]),
                 popup=(
-                    f"Bike ID: {bike['bike_id']}<br>"
-                    f"Distance: {bike['distance']:.2f} meters<br>"
-                    f"Range: {bike['current_range_meter']} meters<br>"
+                    f"ID vélo: {bike['bike_id']}<br>"
+                    f"Distance: {bike['distance']:.2f} mètres<br>"
+                    f"Batterie: {round((bike['current_range_meter']/45000)*100)} %<br>"
                     f"Station: {station_name}"
                 ),
                 icon=folium.Icon(color="green"),
@@ -143,9 +143,9 @@ def main():
         # Save the map to an HTML file and notify the user
         map_file = "closest_bikes_map.html"
         user_map.save(map_file)
-        print(f"A map of the closest bikes has been saved as {map_file}.")
+        print(f"Une carte affichant les vélos les plus proches a été sauvegardée ici : {map_file}.")
     else:
-        print("No available bikes found nearby.")
+        print("Pas de vélo trouvé.")
 
 
 if __name__ == "__main__":

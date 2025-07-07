@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4b311324c349c43e64c72560c8b6a85f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4b311324c349c43e64c72560c8b6a85f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4b311324c349c43e64c72560c8b6a85f = L.map(
+                "map_4b311324c349c43e64c72560c8b6a85f",
+                {
+                    center: [5.68956, 45.2586],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 18,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c5782017a1f2daa22e092c17ad5db071 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c5782017a1f2daa22e092c17ad5db071.addTo(map_4b311324c349c43e64c72560c8b6a85f);
+        
+    
+            var marker_6816e1232c1cf8a8af6e4a2e3944ae69 = L.marker(
+                [5.68956, 45.2586],
+                {
+}
+            ).addTo(map_4b311324c349c43e64c72560c8b6a85f);
+        
+    
+            var icon_30555056928c0b3d06352c52ad1d7db0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fbf2603dddb25bd87df43e60a243c848 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ca4c7571061ba9159578b8c82ff39501 = $(`<div id="html_ca4c7571061ba9159578b8c82ff39501" style="width: 100.0%; height: 100.0%;">Your Location</div>`)[0];
+                popup_fbf2603dddb25bd87df43e60a243c848.setContent(html_ca4c7571061ba9159578b8c82ff39501);
+            
+        
+
+        marker_6816e1232c1cf8a8af6e4a2e3944ae69.bindPopup(popup_fbf2603dddb25bd87df43e60a243c848)
+        ;
+
+        
+    
+    
+                marker_6816e1232c1cf8a8af6e4a2e3944ae69.setIcon(icon_30555056928c0b3d06352c52ad1d7db0);
+            
+    
+            var marker_49ecd1b4c3cdce283056c13551972bdf = L.marker(
+                [43.2314, 5.43712],
+                {
+}
+            ).addTo(map_4b311324c349c43e64c72560c8b6a85f);
+        
+    
+            var icon_f3e7dfc0b2c7e19c2381bdbc600bf6f2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0cc693e06e8b58c9066eb5e5aca71b24 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8c753cf1d64a70fe49c9e2071d6f71dc = $(`<div id="html_8c753cf1d64a70fe49c9e2071d6f71dc" style="width: 100.0%; height: 100.0%;">ID vélo: 58f2a339-8157-4697-9978-8e6521de8d99<br>Distance: 5708408.81 mètres<br>Batterie: 20 %<br>Station: Luminy - Parc National des Calanques</div>`)[0];
+                popup_0cc693e06e8b58c9066eb5e5aca71b24.setContent(html_8c753cf1d64a70fe49c9e2071d6f71dc);
+            
+        
+
+        marker_49ecd1b4c3cdce283056c13551972bdf.bindPopup(popup_0cc693e06e8b58c9066eb5e5aca71b24)
+        ;
+
+        
+    
+    
+                marker_49ecd1b4c3cdce283056c13551972bdf.setIcon(icon_f3e7dfc0b2c7e19c2381bdbc600bf6f2);
+            
+    
+            var marker_4a55ee76a0f3470a2202f801cc48c5dd = L.marker(
+                [43.23152, 5.43723],
+                {
+}
+            ).addTo(map_4b311324c349c43e64c72560c8b6a85f);
+        
+    
+            var icon_42be8f20dcecd00abc5ef077439083de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_20492214119107f270085703532d0131 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_84ba9d5bb92af563e9b5cad5bb4fc2a7 = $(`<div id="html_84ba9d5bb92af563e9b5cad5bb4fc2a7" style="width: 100.0%; height: 100.0%;">ID vélo: 8f3b260f-e53f-404f-8438-c3d7c8130e93<br>Distance: 5708409.25 mètres<br>Batterie: 18 %<br>Station: Luminy - Parc National des Calanques</div>`)[0];
+                popup_20492214119107f270085703532d0131.setContent(html_84ba9d5bb92af563e9b5cad5bb4fc2a7);
+            
+        
+
+        marker_4a55ee76a0f3470a2202f801cc48c5dd.bindPopup(popup_20492214119107f270085703532d0131)
+        ;
+
+        
+    
+    
+                marker_4a55ee76a0f3470a2202f801cc48c5dd.setIcon(icon_42be8f20dcecd00abc5ef077439083de);
+            
+    
+            var marker_5bf9ae7f8c1cdbe1fddd98422bed8c93 = L.marker(
+                [43.25175, 5.42478],
+                {
+}
+            ).addTo(map_4b311324c349c43e64c72560c8b6a85f);
+        
+    
+            var icon_11303715448054e0ceaed6a1907cbee3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8c9ec765db367e89585d9c2256b1f0b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_18b3a31ae88abadefed2ced93ee5355d = $(`<div id="html_18b3a31ae88abadefed2ced93ee5355d" style="width: 100.0%; height: 100.0%;">ID vélo: feaa7e3a-cbe4-4489-be11-8a12d7eec173<br>Distance: 5710532.26 mètres<br>Batterie: 60 %<br>Station: Unknown Station</div>`)[0];
+                popup_8c9ec765db367e89585d9c2256b1f0b4.setContent(html_18b3a31ae88abadefed2ced93ee5355d);
+            
+        
+
+        marker_5bf9ae7f8c1cdbe1fddd98422bed8c93.bindPopup(popup_8c9ec765db367e89585d9c2256b1f0b4)
+        ;
+
+        
+    
+    
+                marker_5bf9ae7f8c1cdbe1fddd98422bed8c93.setIcon(icon_11303715448054e0ceaed6a1907cbee3);
+            
+    
+            var marker_e77a16b6789ce7597df94397d36e3020 = L.marker(
+                [43.23186, 5.39992],
+                {
+}
+            ).addTo(map_4b311324c349c43e64c72560c8b6a85f);
+        
+    
+            var icon_b92d750b52cd276e63ec0144a7814ac5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_58151f3370d037706a9382839b83c4f0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_40f173b11c6eabff5719b1c86b04c635 = $(`<div id="html_40f173b11c6eabff5719b1c86b04c635" style="width: 100.0%; height: 100.0%;">ID vélo: ef56394c-9787-4390-b0b7-314066cb2d63<br>Distance: 5710898.49 mètres<br>Batterie: 86 %<br>Station: Sormiou</div>`)[0];
+                popup_58151f3370d037706a9382839b83c4f0.setContent(html_40f173b11c6eabff5719b1c86b04c635);
+            
+        
+
+        marker_e77a16b6789ce7597df94397d36e3020.bindPopup(popup_58151f3370d037706a9382839b83c4f0)
+        ;
+
+        
+    
+    
+                marker_e77a16b6789ce7597df94397d36e3020.setIcon(icon_b92d750b52cd276e63ec0144a7814ac5);
+            
+    
+            var marker_b3981e5b9e65067a8fccd0a92e26bab0 = L.marker(
+                [43.231854, 5.399849],
+                {
+}
+            ).addTo(map_4b311324c349c43e64c72560c8b6a85f);
+        
+    
+            var icon_e7eb100d45071fe9727e3f1486710a54 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_16e023f0e168f6a36cfdfe17ca5acc1f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e7d562fa46c186449044849a8f7acd92 = $(`<div id="html_e7d562fa46c186449044849a8f7acd92" style="width: 100.0%; height: 100.0%;">ID vélo: d947deeb-ac61-498e-9688-1c66dfbeb541<br>Distance: 5710902.81 mètres<br>Batterie: 54 %<br>Station: Sormiou</div>`)[0];
+                popup_16e023f0e168f6a36cfdfe17ca5acc1f.setContent(html_e7d562fa46c186449044849a8f7acd92);
+            
+        
+
+        marker_b3981e5b9e65067a8fccd0a92e26bab0.bindPopup(popup_16e023f0e168f6a36cfdfe17ca5acc1f)
+        ;
+
+        
+    
+    
+                marker_b3981e5b9e65067a8fccd0a92e26bab0.setIcon(icon_e7eb100d45071fe9727e3f1486710a54);
+            
+</script>
+</html>
