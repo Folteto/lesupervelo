@@ -166,6 +166,7 @@ def main():
         map_file = "closest_bikes_map.html"
         user_map.save(map_file)
         print(f"Une carte affichant les vélos les plus proches a été sauvegardée ici : {map_file}.")
+        print(f"La carte va être ouverte automatiquement dans votre navigateur par défaut.")
     else:
         print("Pas de vélo trouvé.")
 
