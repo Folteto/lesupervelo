@@ -2,6 +2,8 @@ import requests
 import math
 import folium
 import webbrowser
+import shutil
+import os
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut
 
@@ -50,7 +52,7 @@ def get_station_name(station_id, stations_data):
     for station in stations_data["data"]["stations"]:
         if station["station_id"] == station_id:
             return station.get("name", "Unknown Station")
-    return "Unknown Station"
+    return "Station inconnue : le vélo n'est pas rattaché à une station."
 
 
 def calculate_distance(lat1, lon1, lat2, lon2):
@@ -93,6 +95,19 @@ def find_closest_bikes(user_coords, bikes_data):
     valid_bikes.sort(key=lambda x: (x["distance"], -x["current_range_meter"]))
     return valid_bikes[:5]
 
+
+def open_html(html_path: str):
+    """
+    Ouvre un fichier HTML local ou une URL, sur PC comme sous Termux.
+    - Sous Termux : utilise termux-open si disponible.
+    - Sinon      : webbrowser.open (fonctionne sur Windows, macOS, Linux).
+    """
+    # si termux-open est installé, on est probablement sous Termux
+    if shutil.which("termux-open"):
+        cmd = f"termux-open '{html_path}'"
+        os.system(cmd)
+    else:
+        webbrowser.open(html_path)
 
 def main():
     bike_api_url = (
@@ -155,4 +170,5 @@ def main():
 
 if __name__ == "__main__":
     main()
-    webbrowser.open("closest_bikes_map.html")
+
+    open_html("closest_bikes_map.html")
