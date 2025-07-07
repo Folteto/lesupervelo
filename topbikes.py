@@ -2,17 +2,22 @@ import requests
 import math
 import folium
 import webbrowser
+from geopy.geocoders import Nominatim
+from geopy.exc import GeocoderTimedOut
 
-
-def get_user_coordinates():
+def ask_for_address():
+    address = input("Entrez votre adresse à Marseille : ") + " Marseille, France"
+    geolocator = Nominatim(user_agent="bike_locator")
     try:
-        latitude = float(input("Enter your latitude: "))
-        longitude = float(input("Enter your longitude: "))
-        return latitude, longitude
-    except ValueError:
-        print("Invalid input. Please enter numeric values for coordinates.")
+        location = geolocator.geocode(address, timeout=10)
+        if location:
+            return (location.latitude, location.longitude)
+        else:
+            print("Adresse non trouvée. Veuillez vérifier l'orthographe.")
+            return None
+    except GeocoderTimedOut:
+        print("La demande de géocodage a expiré. Veuillez réessayer.")
         return None
-
 
 def fetch_bike_data(api_url):
     try:
@@ -96,14 +101,14 @@ def main():
     station_api_url = (
         "https://gbfs.omega.fifteen.eu/gbfs/2.2/marseille/en/station_information.json"
     )
-    user_coords = get_user_coordinates()
+    user_coords = ask_for_address()
     if not user_coords:
         return
 
     bike_data = fetch_bike_data(bike_api_url)
     station_data = fetch_station_data(station_api_url)
     if not bike_data or "data" not in bike_data or "bikes" not in bike_data["data"]:
-        print("No bike data available.")
+        print("Erreur avec l'API levélo.")
         return
 
     closest_bikes = find_closest_bikes(user_coords, bike_data["data"]["bikes"])
